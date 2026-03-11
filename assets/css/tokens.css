@@ -1,0 +1,104 @@
+/* ============================================================
+   Consola — Design Tokens
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  /* ── Background Gradient ── */
+  --bg-gradient: linear-gradient(176deg, #1c4c79 0%, #043665 91%);
+
+  /* ── Brand Colors ── */
+  --orange-primary:    #E97300;
+  --orange-dark:       #C74700;
+  --orange-gradient:   linear-gradient(180deg, #E97300 0%, #C74700 100%);
+  --orange-gradient-h: linear-gradient(180deg, #FF8C1A 0%, #D95200 100%);
+
+  /* ── Whites with opacity ── */
+  --white:             #FFFFFF;
+  --white-99:          rgba(255,255,255,0.6);
+  --white-66:          rgba(255,255,255,0.4);
+  --white-33:          rgba(255,255,255,0.2);
+  --white-1A:          rgba(255,255,255,0.102);
+  --white-0D:          rgba(255,255,255,0.051);
+  --white-0A:          rgba(255,255,255,0.039);
+  --white-08:          rgba(255,255,255,0.031);
+
+  /* ── Input states ── */
+  --input-bg-default:  rgba(255,255,255,0.102);   /* #FFFFFF1A */
+  --input-bg-hover:    rgba(0,0,0,0.6);            /* #00000099 */
+  --input-bg-focus:    rgba(0,0,0,0.4);            /* #00000066 */
+  --input-border-default: rgba(255,255,255,0.2);   /* #FFFFFF33 */
+  --input-border-focus:   #E97300;
+  --input-text:        rgba(255,255,255,1);
+  --input-placeholder: rgba(255,255,255,0.4);
+
+  /* ── Text colors ── */
+  --text-primary:   #FFFFFF;
+  --text-secondary: #cacaca;
+  --text-muted:     rgba(255,255,255,0.4);
+
+  /* ── Border ── */
+  --border-subtle:    rgba(255,255,255,0.102);     /* #FFFFFF1A */
+  --border-light:     rgba(255,255,255,0.2);       /* #FFFFFF33 */
+
+  /* ── Corner radii ── */
+  --radius-sm:   9px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   24px;
+  --radius-pill: 25px;
+  --radius-full: 999px;
+
+  /* ── Shadows ── */
+  --shadow-sidebar: 9px 4px 25px rgba(0,0,0,0.15);
+  --shadow-modal:   -10px 4px 21px rgba(0,0,0,0.25);
+
+  /* ── Typography ── */
+  --font-family: 'Funnel Sans', sans-serif;
+  --fs-xs:  10px;
+  --fs-sm:  11px;
+  --fs-base: 13px;
+  --fs-md:  14px;
+  --fs-lg:  15px;
+  --fs-xl:  16px;
+  --fs-2xl: 18px;
+  --fs-3xl: 20px;
+  --fs-hero: 48px;
+
+  /* ── Sidebar ── */
+  --sidebar-width: 220px;
+}
+
+/* ── Global reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input, textarea {
+  font-family: var(--font-family);
+  outline: none;
+  border: none;
+  background: none;
+}
+
+a { text-decoration: none; color: inherit; }
