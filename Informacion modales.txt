@@ -1,0 +1,413 @@
+{
+  "digitalization_process": {
+    "phases": [
+      {
+        "phase_name": "SOLICITUD [cite: 1]",
+        "documents": [
+          {
+            "document_title": "1. Solicitud de Crédito [cite: 2]",
+            "sections": [
+              {
+                "section_name": "Información del Cliente [cite: 3]",
+                "fields": [
+                  {
+                    "field_name": "Nombre del Cliente [cite: 6]",
+                    "field_type": "Texto [cite: 6]"
+                  }
+                ]
+              },
+              {
+                "section_name": "Información del Crédito [cite: 7]",
+                "fields": [
+                  {
+                    "field_name": "Tipo de Crédito [cite: 8]",
+                    "field_type": "Selección (Negocio / Vivienda / Consumo) [cite: 8]"
+                  },
+                  {
+                    "field_name": "Monto solicitado [cite: 8]",
+                    "field_type": "Número [cite: 8]"
+                  },
+                  {
+                    "field_name": "Fecha de pago solicitada [cite: 8]",
+                    "field_type": "Fecha [cite: 8]"
+                  },
+                  {
+                    "field_name": "Plazo en meses [cite: 8]",
+                    "field_type": "Número [cite: 8]"
+                  },
+                  {
+                    "field_name": "Frecuencia de pago [cite: 8]",
+                    "field_type": "Selección [cite: 8]"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "document_title": "2. Autorizaciones Ley Historial Crediticio [cite: 9]",
+            "sections": [
+              {
+                "section_name": "Datos del Cliente [cite: 10]",
+                "fields": [
+                  {
+                    "field_name": "Nombre completo [cite: 11]",
+                    "field_type": "Texto [cite: 11]"
+                  },
+                  {
+                    "field_name": "Número documento (DUI / NIT) [cite: 11]",
+                    "field_type": "Texto [cite: 11]"
+                  },
+                  {
+                    "field_name": "Teléfono [cite: 11]",
+                    "field_type": "Texto [cite: 11]"
+                  },
+                  {
+                    "field_name": "Correo electrónico [cite: 11]",
+                    "field_type": "Texto [cite: 11]"
+                  }
+                ]
+              },
+              {
+                "section_name": "Consentimientos [cite: 12]",
+                "fields": [
+                  {
+                    "field_name": "Autoriza compartir teléfono [cite: 13]",
+                    "field_type": "Boolean [cite: 13]"
+                  },
+                  {
+                    "field_name": "Autoriza compartir correo [cite: 14]",
+                    "field_type": "Boolean [cite: 14]"
+                  },
+                  {
+                    "field_name": "Autoriza consulta historial crediticio [cite: 14]",
+                    "field_type": "Boolean [cite: 14]"
+                  },
+                  {
+                    "field_name": "Autoriza transferencia información crediticia [cite: 14]",
+                    "field_type": "Boolean [cite: 14]"
+                  }
+                ]
+              },
+              {
+                "section_name": "Firma a ruego (opcional) [cite: 15]",
+                "fields": [
+                  {
+                    "field_name": "A ruego de [cite: 16]",
+                    "field_type": "Texto [cite: 16]"
+                  },
+                  {
+                    "field_name": "Lo hace [cite: 16]",
+                    "field_type": "Texto [cite: 16]"
+                  },
+                  {
+                    "field_name": "Documento de quien firma [cite: 16]",
+                    "field_type": "Texto [cite: 16]"
+                  },
+                  {
+                    "field_name": "Firma [cite: 16]",
+                    "field_type": "Firma [cite: 16]"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "phase_name": "EVALUACIÓN [cite: 17]",
+        "documents": [
+          {
+            "document_title": "3. Presupuesto de Inversión [cite: 18]",
+            "sections": [
+              {
+                "section_name": "Información General [cite: 19]",
+                "fields": [
+                  {
+                    "field_name": "Nombre del cliente [cite: 20]",
+                    "field_type": "Texto [cite: 20]"
+                  },
+                  {
+                    "field_name": "Nombre del responsable [cite: 20]",
+                    "field_type": "Texto [cite: 20]"
+                  },
+                  {
+                    "field_name": "Monto del crédito [cite: 20]",
+                    "field_type": "Número [cite: 20]"
+                  },
+                  {
+                    "field_name": "Destino del crédito [cite: 20]",
+                    "field_type": "Texto [cite: 20]"
+                  },
+                  {
+                    "field_name": "DUI cliente [cite: 20]",
+                    "field_type": "Texto [cite: 20]"
+                  }
+                ]
+              },
+              {
+                "section_name": "Detalle de inversión [cite: 21]",
+                "fields": [
+                  {
+                    "field_name": "Cantidad [cite: 22]",
+                    "field_type": "Número [cite: 22]"
+                  },
+                  {
+                    "field_name": "Descripción [cite: 22]",
+                    "field_type": "Texto [cite: 22]"
+                  },
+                  {
+                    "field_name": "Precio unitario [cite: 22]",
+                    "field_type": "Decimal [cite: 22]"
+                  },
+                  {
+                    "field_name": "Precio total [cite: 22]",
+                    "field_type": "Decimal [cite: 22]"
+                  }
+                ]
+              },
+              {
+                "section_name": "Totales [cite: 23]",
+                "fields": [
+                  {
+                    "field_name": "Total inversión [cite: 25]",
+                    "field_type": "Decimal [cite: 26]"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "document_title": "4. Designación de Peritos [cite: 27]",
+            "sections": [
+              {
+                "section_name": "Información del Perito [cite: 28]",
+                "fields": [
+                  {
+                    "field_name": "Nombre del perito valuador [cite: 29]",
+                    "field_type": "Texto [cite: 29]"
+                  },
+                  {
+                    "field_name": "Número de registro SSF [cite: 29]",
+                    "field_type": "Texto [cite: 29]"
+                  }
+                ]
+              },
+              {
+                "section_name": "Datos del cliente [cite: 30]",
+                "fields": [
+                  {
+                    "field_name": "Cliente [cite: 32]",
+                    "field_type": "Texto [cite: 32]"
+                  },
+                  {
+                    "field_name": "DUI [cite: 33]",
+                    "field_type": "Texto [cite: 34]"
+                  },
+                  {
+                    "field_name": "NIT [cite: 35]",
+                    "field_type": "Texto [cite: 36]"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "document_title": "5. Designación de Aseguradora [cite: 37]",
+            "sections": [
+              {
+                "section_name": "Información del Crédito [cite: 38]",
+                "fields": [
+                  {
+                    "field_name": "Monto del crédito aprobado [cite: 39]",
+                    "field_type": "Decimal [cite: 39]"
+                  },
+                  {
+                    "field_name": "Número de crédito [cite: 39]",
+                    "field_type": "Texto [cite: 39]"
+                  }
+                ]
+              },
+              {
+                "section_name": "Información de seguros [cite: 40]",
+                "fields": [
+                  {
+                    "field_name": "Seguro de deuda [cite: 42]",
+                    "field_type": "A definir [cite: 44]"
+                  },
+                  {
+                    "field_name": "Compañía aseguradora deuda [cite: 45]",
+                    "field_type": "Texto [cite: 45]"
+                  },
+                  {
+                    "field_name": "Seguro de daños [cite: 46]",
+                    "field_type": "A definir [cite: 46]"
+                  },
+                  {
+                    "field_name": "Compañía aseguradora daños [cite: 46]",
+                    "field_type": "Texto [cite: 46]"
+                  }
+                ]
+              },
+              {
+                "section_name": "Información del cliente [cite: 47]",
+                "fields": [
+                  {
+                    "field_name": "Nombre completo cliente [cite: 48]",
+                    "field_type": "Texto [cite: 48]"
+                  },
+                  {
+                    "field_name": "DUI [cite: 48]",
+                    "field_type": "No definido"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "document_title": "6. Solicitud de Servicio de Asesoría Financiera [cite: 49]",
+            "sections": [
+              {
+                "section_name": "Datos del Cliente [cite: 50]",
+                "fields": [
+                  {
+                    "field_name": "Nombre del cliente [cite: 51]",
+                    "field_type": "Texto [cite: 51]"
+                  },
+                  {
+                    "field_name": "Tipo de documento [cite: 51]",
+                    "field_type": "Texto [cite: 51]"
+                  },
+                  {
+                    "field_name": "Número documento [cite: 51]",
+                    "field_type": "Texto [cite: 51]"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "phase_name": "FORMALIZACIÓN Y DESEMBOLSO [cite: 52]",
+        "documents": [
+          {
+            "document_title": "7. Conoce a tu Cliente (KYC) [cite: 53]",
+            "notes": "NOTA: En la plantilla proporcionada por integral no se encuentran el detalle del/los segmentos del cliente. [cite: 55]",
+            "sections": [
+              {
+                "section_name": "Información Personal [cite: 54]",
+                "fields": [
+                  { "field_name": "Cliente nuevo [cite: 57]" },
+                  { "field_name": "Primer nombre [cite: 58]" },
+                  { "field_name": "Segundo nombre [cite: 59]" },
+                  { "field_name": "Tercer nombre [cite: 60]" },
+                  { "field_name": "Primer apellido [cite: 61]" },
+                  { "field_name": "Segundo apellido [cite: 62]" },
+                  { "field_name": "Apellido de casada [cite: 64]" },
+                  { "field_name": "Nombre según DUI [cite: 65]" },
+                  { "field_name": "Tipo documento [cite: 66]" },
+                  { "field_name": "Número documento [cite: 67]" },
+                  { "field_name": "Fecha expedición documento [cite: 68]" },
+                  { "field_name": "Fecha vencimiento documento [cite: 69]" },
+                  { "field_name": "Lugar expedición [cite: 70]" },
+                  { "field_name": "Fecha nacimiento [cite: 71]" },
+                  { "field_name": "País nacimiento [cite: 72]" },
+                  { "field_name": "Nacionalidad [cite: 73]" },
+                  { "field_name": "Estado familiar [cite: 74]" },
+                  { "field_name": "Edad [cite: 75]" },
+                  { "field_name": "Género [cite: 76]" },
+                  { "field_name": "Profesión u oficio [cite: 77]" },
+                  { "field_name": "Posee NRC [cite: 78]" }
+                ]
+              },
+              {
+                "section_name": "Datos de Contacto [cite: 79]",
+                "fields": [
+                  { "field_name": "Dirección domicilio [cite: 81]" },
+                  { "field_name": "Departamento [cite: 82]" },
+                  { "field_name": "Municipio [cite: 83]" },
+                  { "field_name": "Teléfono celular [cite: 84]" },
+                  { "field_name": "Correo electrónico [cite: 85]" }
+                ]
+              },
+              {
+                "section_name": "Cumplimiento [cite: 86]",
+                "fields": [
+                  { "field_name": "Residente EEUU [cite: 88]" },
+                  { "field_name": "Ciudadano EEUU [cite: 89]" },
+                  { "field_name": "PEP últimos 5 años [cite: 90]" }
+                ]
+              },
+              {
+                "section_name": "Información financiera [cite: 91]",
+                "fields": [
+                  { "field_name": "Actividad económica [cite: 93]" },
+                  { "field_name": "Fuente de ingresos [cite: 94]" },
+                  { "field_name": "Otra actividad económica [cite: 95]" },
+                  { "field_name": "Otra fuente de ingresos [cite: 96]" }
+                ]
+              }
+            ]
+          },
+          {
+            "document_title": "8. Declaración Jurada del Cliente [cite: 97]",
+            "sections": [
+              {
+                "section_name": "Información del Cliente [cite: 98]",
+                "fields": [
+                  { "field_name": "Nombre [cite: 100]" },
+                  { "field_name": "Profesión [cite: 101]" },
+                  { "field_name": "Edad [cite: 102]" },
+                  { "field_name": "Domicilio [cite: 103]" },
+                  { "field_name": "Nacionalidad [cite: 104]" },
+                  { "field_name": "Tipo documento [cite: 105]" },
+                  { "field_name": "Número documento [cite: 106]" }
+                ]
+              },
+              {
+                "section_name": "Productos financieros [cite: 107]",
+                "fields": [
+                  { "field_name": "Tipo producto [cite: 110]" },
+                  { "field_name": "Número producto [cite: 111]" }
+                ]
+              },
+              {
+                "section_name": "Actividad financiera [cite: 112]",
+                "fields": [
+                  { "field_name": "Actividad económica [cite: 114]" },
+                  { "field_name": "Número depósitos mensuales [cite: 115]" },
+                  { "field_name": "Monto aproximado depósitos [cite: 117]" }
+                ]
+              }
+            ]
+          },
+          {
+            "document_title": "9. Designación de Notario [cite: 118]",
+            "sections": [
+              {
+                "section_name": "Información del Crédito [cite: 119]",
+                "fields": [
+                  { "field_name": "Monto crédito aprobado [cite: 121]" },
+                  { "field_name": "Número crédito [cite: 122]" }
+                ]
+              },
+              {
+                "section_name": "Información del Notario [cite: 123]",
+                "fields": [
+                  { "field_name": "Nombre del notario [cite: 125]" }
+                ]
+              },
+              {
+                "section_name": "Cliente [cite: 126]",
+                "fields": [
+                  { "field_name": "Nombre cliente [cite: 128]" },
+                  { "field_name": "Documento cliente [cite: 129]" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

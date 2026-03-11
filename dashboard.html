@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consola | Dashboard — Banco Integral</title>
+  <meta name="description" content="Panel administrativo para gestionar y habilitar la firma de contratos de Banco Integral." />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="dashboard-page">
+
+  <!-- ══════════════════════════════════════════
+       SIDEBAR
+  ══════════════════════════════════════════ -->
+  <aside class="sidebar">
+
+    <div class="sb-top">
+      <!-- Logo -->
+      <div class="sb-logo">
+        <img src="Logo.svg" alt="Banco Integral" />
+      </div>
+
+      <!-- Navigation -->
+          <div class="sb-nav">
+            <a href="#" class="nav-item active">
+              <i data-lucide="files" class="lucide nav-icon white-icon"></i>
+              <span class="nav-text">Contratos</span>
+            </a>
+          </div>
+    </div>
+
+    <!-- Footer: user info + logout -->
+    <div class="sb-footer">
+      <div class="sb-user">
+        <div class="sb-avatar">A</div>
+        <div class="sb-user-info">
+          <span class="sb-user-name">Administrador</span>
+          <span class="sb-user-email">admin@empresa.com</span>
+        </div>
+      </div>
+      <button class="btn-logout" id="logoutBtn" type="button">
+        <i data-lucide="log-out" class="lucide"></i>
+        <span>Cerrar sesión</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════════════════ -->
+  <main class="main-content">
+
+      <!-- Top bar -->
+      <div class="top-bar">
+        <div class="page-title-group">
+          <h1 class="page-title fw-500">Habilitar Firma de Contratos</h1>
+          <p class="page-subtitle">Gestiona y habilita la firma de contratos para cada usuario</p>
+        </div>
+      </div>
+    <!-- Content area -->
+    <div class="content-area">
+
+      <!-- Search card -->
+      <div class="search-card">
+        <div class="search-card-header">
+          <span class="search-card-label">Buscar usuario por número de documento</span>
+        </div>
+        <div class="search-row">
+          <div class="search-input-wrapper">
+            <i data-lucide="search" class="lucide"></i>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Ingresa el número de documento del usuario..."
+              autocomplete="off"
+            />
+          </div>
+          <button class="btn-search" id="searchBtn" type="button">
+            Buscar
+          </button>
+        </div>
+      </div>
+
+        <!-- Empty state card -->
+        <div class="empty-state-container" id="emptyStateView">
+          <div class="empty-inner">
+            <div class="empty-texts">
+              <h2 class="empty-title">Busca un usuario para comenzar</h2>
+              <p class="empty-subtitle">
+                Ingresá el número de documento del usuario en la barra de búsqueda para ver sus contratos disponibles para firma.
+              </p>
+            </div>
+            <div class="empty-divider"></div>
+            <div class="empty-hint">
+              <i data-lucide="info" class="lucide"></i>
+              <span>Ingresá el DUI o Carné de residencia del usuario</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resultados de Búsqueda (Oculto inicialmente) -->
+        <div class="search-results-container hidden" id="searchResultsView">
+          <!-- User Profile Label -->
+          <div class="name-search-card">
+            <div class="nsc-left">
+              <h2 class="nsc-name">Carlos Mendoza</h2>
+              <span class="nsc-dui">DUI: 12345678-9</span>
+            </div>
+            <div class="nsc-divider"></div>
+            <div class="nsc-right">
+              <a href="https://echotechs.net/" target="_blank" class="nsc-link">https://echotechs.net/</a>
+            </div>
+          </div>
+
+          <!-- Tabs and Tables Card -->
+          <div class="sr-card">
+            <div class="sr-tabs">
+              <div class="sr-tab active" data-target="tab-por-firmar">
+                <i data-lucide="clock" class="lucide tab-icon orange"></i>
+                <span class="tab-label white">Por Firmar</span>
+                <div class="tab-badge">7</div>
+              </div>
+              <div class="sr-tab" data-target="tab-firmados">
+                <i data-lucide="file-check" class="lucide tab-icon"></i>
+                <span class="tab-label">Firmados</span>
+                <div class="tab-badge">2</div>
+              </div>
+              <div class="sr-tab" data-target="tab-pendientes">
+                <i data-lucide="hourglass" class="lucide tab-icon"></i>
+                <span class="tab-label">Pendientes de firmar</span>
+                <div class="tab-badge">1</div>
+              </div>
+            </div>
+
+            <!-- TAB CONTENT: Por Firmar -->
+            <div class="sr-table-view active" id="tab-por-firmar">
+              <div class="sr-th">
+                <span>Contrato</span>
+                <span>Acciones</span>
+              </div>
+              <!-- 1 -->
+              <div class="sr-row">
+                <div class="sr-info">
+                  <span class="sr-title">Autorizaciones ley historial crediticio</span>
+                  <span class="sr-sub">Solicitud</span>
+                </div>
+                <div class="sr-actions">
+                  <button class="btn-outline" onclick="openModal('modalConfirmarFirmaFisica')"><i data-lucide="pen-line" class="lucide"></i> Firma Física</button>
+                  <button class="btn-solid" onclick="openModal('modalCompletar')"><i data-lucide="file-pen" class="lucide"></i> Completar datos</button>
+                </div>
+              </div>
+              <!-- 2 -->
+              <div class="sr-row">
+                <div class="sr-info">
+                  <span class="sr-title">Solicitud de crédito</span>
+                  <span class="sr-sub">Solicitud</span>
+                </div>
+                <div class="sr-actions">
+                  <button class="btn-outline" onclick="openModal('modalConfirmarFirmaFisica')"><i data-lucide="pen-line" class="lucide"></i> Firma Física</button>
+                  <button class="btn-solid" onclick="openModal('modalCompletar')"><i data-lucide="file-pen" class="lucide"></i> Completar datos</button>
+                </div>
+              </div>
+              <!-- 3 -->
+              <div class="sr-row">
+                <div class="sr-info">
+                  <span class="sr-title">Designación de notario</span>
+                  <span class="sr-sub">Formalización y Desembolso</span>
+                </div>
+                <div class="sr-actions">
+                  <button class="btn-outline" onclick="openModal('modalConfirmarFirmaFisica')"><i data-lucide="pen-line" class="lucide"></i> Firma Física</button>
+                  <button class="btn-solid" onclick="openModal('modalCompletar')"><i data-lucide="file-pen" class="lucide"></i> Completar datos</button>
+                </div>
+              </div>
+              <!-- 4 -->
+              <div class="sr-row">
+                <div class="sr-info">
+                  <span class="sr-title">Declaración jurada digital del cliente</span>
+                  <span class="sr-sub">Formalización y Desembolso</span>
+                </div>
+                <div class="sr-actions">
+                  <button class="btn-outline" onclick="openModal('modalConfirmarFirmaFisica')"><i data-lucide="pen-line" class="lucide"></i> Firma Física</button>
+                  <button class="btn-solid" onclick="openModal('modalCompletar')"><i data-lucide="file-pen" class="lucide"></i> Completar datos</button>
+                </div>
+              </div>
+              <!-- 5 -->
+              <div class="sr-row">
+                <div class="sr-info">
+                  <span class="sr-title">Formulario digital conoce a tu cliente</span>
+                  <span class="sr-sub">Formalización y Desembolso</span>
+                </div>
+                <div class="sr-actions">
+                  <button class="btn-outline" onclick="openModal('modalConfirmarFirmaFisica')"><i data-lucide="pen-line" class="lucide"></i> Firma Física</button>
+                  <button class="btn-solid" onclick="openModal('modalCompletar')"><i data-lucide="file-pen" class="lucide"></i> Completar datos</button>
+                </div>
+              </div>
+              <!-- 6 -->
+              <div class="sr-row">
+                <div class="sr-info">
+                  <span class="sr-title">Solicitud de servicio de asesoría financiera</span>
+                  <span class="sr-sub">Evaluación</span>
+                </div>
+                <div class="sr-actions">
+                  <button class="btn-outline" onclick="openModal('modalConfirmarFirmaFisica')"><i data-lucide="pen-line" class="lucide"></i> Firma Física</button>
+                  <button class="btn-solid" onclick="openModal('modalCompletar')"><i data-lucide="file-pen" class="lucide"></i> Completar datos</button>
+                </div>
+              </div>
+              <!-- 7 -->
+              <div class="sr-row">
+                <div class="sr-info">
+                  <span class="sr-title">Formulario designación aseguradora</span>
+                  <span class="sr-sub">Evaluación</span>
+                </div>
+                <div class="sr-actions">
+                  <button class="btn-outline" onclick="openModal('modalConfirmarFirmaFisica')"><i data-lucide="pen-line" class="lucide"></i> Firma Física</button>
+                  <button class="btn-solid" onclick="openModal('modalCompletar')"><i data-lucide="file-pen" class="lucide"></i> Completar datos</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB CONTENT: Firmados -->
+            <div class="sr-table-view hidden" id="tab-firmados">
+              <div class="sr-th">
+                <span>Contrato</span>
+                <span>Fecha de firma</span>
+              </div>
+              <div class="sr-row">
+                <div class="sr-info">
+                  <span class="sr-title">Solicitud para seguro de vida colectivo decreciente</span>
+                  <span class="sr-sub">Evaluación</span>
+                </div>
+                <div class="sr-actions">
+                  <span class="date-text">12 oct 2026, 14:30</span>
+                </div>
+              </div>
+              <div class="sr-row">
+                <div class="sr-info">
+                  <span class="sr-title">Formulario para designación de peritos</span>
+                  <span class="sr-sub">Evaluación</span>
+                </div>
+                <div class="sr-actions">
+                  <span class="date-text">12 oct 2026, 15:00</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB CONTENT: Pendientes -->
+            <div class="sr-table-view hidden" id="tab-pendientes">
+              <div class="sr-th">
+                <span>Contrato</span>
+                <span>Fecha de envío</span>
+              </div>
+              <div class="sr-row">
+                <div class="sr-info">
+                  <span class="sr-title">Presupuesto de inversión</span>
+                  <span class="sr-sub">Evaluación</span>
+                </div>
+                <div class="sr-actions">
+                  <span class="date-text">Hoy, 10:30 am</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+    </div><!-- /content-area -->
+
+    <!-- ==============================================
+         MODALS
+    =============================================== -->
+    <!-- Modal: Completar Datos -->
+    <div class="modal-backdrop hidden" id="modalCompletar">
+      <div class="modal-container">
+        <!-- Header -->
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <h2 class="modal-title" id="dynModalTitle">Autorizaciones ley historial crediticio</h2>
+            <p class="modal-subtitle">Persona natural</p>
+          </div>
+          <button class="modal-close-btn" onclick="closeModal('modalCompletar')">
+            <i data-lucide="x" class="lucide"></i>
+          </button>
+        </div>
+        
+        <!-- Contenido principal interactivo scrollable -->
+        <div class="modal-body custom-scroll">
+          
+          <div class="contract-banner">
+            <div class="contract-banner-left">
+              <span class="contract-banner-label">Contrato seleccionado</span>
+              <span class="contract-banner-title">Autorizaciones ley historial crediticio</span>
+            </div>
+          </div>
+
+          <div class="form-grid" id="dynamicFormGrid">
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+          <button class="btn-cancel" onclick="closeModal('modalCompletar')">Cancelar</button>
+          <button class="btn-send" onclick="sendLink()">Enviar link de firma digital</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Confirmar Envío -->
+    <div class="modal-backdrop hidden" id="modalConfirmarEnvio">
+      <div class="modal-container success-modal" style="width: 500px; padding: 40px;">
+        <div class="success-content" style="margin-bottom: 0;">
+          <h2 class="success-title">Confirmación de cambios</h2>
+          <p class="success-desc">¿Estás seguro que quieres proceder a enviar el link de firma digital?</p>
+        </div>
+        <div class="success-btns" style="display: flex; gap: 12px; margin-top: 24px;">
+          <button class="btn-cancel full-w" onclick="closeModal('modalConfirmarEnvio')" style="margin-top: 0;">Cancelar</button>
+          <button class="btn-send full-w" onclick="confirmarEnvioLink()" style="margin-top: 0;">Confirmar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Confirmar Firma Física -->
+    <div class="modal-backdrop hidden" id="modalConfirmarFirmaFisica">
+      <div class="modal-container success-modal" style="width: 500px; padding: 40px;">
+        <div class="success-content" style="margin-bottom: 0;">
+          <h2 class="success-title" style="font-size: 20px;">¿Está seguro de seleccionar Firma Física?</h2>
+          <p class="success-desc">No podrás deshacer esta acción.</p>
+        </div>
+        <div class="success-btns" style="display: flex; gap: 12px; margin-top: 24px;">
+          <button class="btn-cancel full-w" onclick="closeModal('modalConfirmarFirmaFisica')" style="margin-top: 0;">Cancelar</button>
+          <button class="btn-send full-w" onclick="closeModal('modalConfirmarFirmaFisica')" style="margin-top: 0;">Continuar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Link Enviado -->
+    <div class="modal-backdrop hidden" id="modalSuccess">
+      <div class="modal-container success-modal">
+        <div class="success-content">
+          <h2 class="success-title">¡Link enviado exitosamente!</h2>
+          <p class="success-desc">El enlace de firma digital ha sido enviado al correo de Carlos Mendoza.</p>
+        </div>
+        
+        <div class="modal-divider"></div>
+        
+        <div class="success-info-row">
+          <div class="info-box">
+            <span class="ib-label">Usuario</span>
+            <span class="ib-val">Carlos Mendoza</span>
+          </div>
+          <div class="info-box">
+            <span class="ib-label">DUI</span>
+            <span class="ib-val">12345678-9</span>
+          </div>
+          <div class="info-box">
+            <span class="ib-label">Contrato enviado</span>
+            <span class="ib-val">Autorizaciones...</span>
+          </div>
+        </div>
+        
+        <div class="modal-divider"></div>
+        
+        <div class="success-btns">
+          <button class="btn-send full-w" onclick="closeModal('modalSuccess')">Volver al usuario</button>
+          <button class="btn-cancel full-w mt-3" onclick="closeModal('modalSuccess'); resetSearch();">Realizar nueva búsqueda</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

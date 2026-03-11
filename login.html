@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consola | Iniciar Sesión — Banco Integral</title>
+  <meta name="description" content="Accede al panel administrativo de Banco Integral para gestionar y habilitar la firma de contratos." />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/login.css" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="login-page">
+
+  <!-- ── LEFT PANEL: form ─────────────────────────────── -->
+  <div class="login-left">
+
+    <!-- Logo -->
+    <div class="login-logo">
+      <img src="Logo.svg" alt="Banco Integral" />
+    </div>
+
+    <!-- Card -->
+    <div class="login-card">
+
+      <!-- Header -->
+      <div class="login-header">
+        <h1 class="login-title">Bienvenido</h1>
+        <p class="login-subtitle">Ingresa tus credenciales para acceder al panel administrativo.</p>
+      </div>
+
+      <!-- Form -->
+      <div class="login-form">
+
+        <!-- Email field -->
+        <div class="field-group">
+          <label class="field-label" for="email">Correo electrónico</label>
+          <div class="input-wrapper">
+            <i data-lucide="mail" class="lucide"></i>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="admin@empresa.com"
+              autocomplete="email"
+            />
+          </div>
+        </div>
+
+        <!-- Password field -->
+        <div class="field-group">
+          <label class="field-label" for="password">Contraseña</label>
+          <div class="input-wrapper">
+            <i data-lucide="lock" class="lucide"></i>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="••••••••"
+              autocomplete="current-password"
+            />
+            <button class="btn-eye" id="eyeToggle" type="button" aria-label="Mostrar/ocultar contraseña">
+              <i data-lucide="eye" id="eyeIcon" class="lucide"></i>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /login-form -->
+
+      <!-- Login button -->
+      <button class="btn-login" id="loginBtn" type="button">
+        <span>Iniciar sesión</span>
+        <i data-lucide="arrow-right" class="lucide"></i>
+      </button>
+
+    </div><!-- /login-card -->
+  </div><!-- /login-left -->
+
+  <!-- ── RIGHT PANEL ───────────────────────────────────── -->
+  <div class="login-right">
+    <div class="login-right-panel">
+      <!-- Decoración de fondo (Imagen Log In) con overlay si aplicable -->
+      <div class="login-right-title">
+        <span class="line-normal">Gestione y</span>
+        <span class="line-bold">envíe contratos</span>
+      </div>
+      <p class="login-right-subtitle">
+        Acceda a la plataforma administrativa para supervisar, validar y gestionar el
+        ciclo de vida de los contratos de Banco Integral.
+      </p>
+
+      <!-- Mockup del Dashboard interior -->
+      <div class="login-mockup">
+        <!-- Tarjeta de Perfil -->
+        <div class="mockup-profile">
+          <div class="mp-name">Carlos Mendoza</div>
+          <div class="mp-dui">DUI: 12345678-9</div>
+        </div>
+        
+        <!-- Tarjeta de Contratos -->
+        <div class="mockup-card">
+          <!-- Tabs -->
+          <div class="mc-tabs">
+            <div class="mc-tab active">
+              <i data-lucide="clock" class="lucide mc-tab-icon orange"></i>
+              <span class="mc-tab-label white">Por Firmar</span>
+              <div class="mc-tab-badge current">3</div>
+            </div>
+            <div class="mc-tab-divider"></div>
+            <div class="mc-tab">
+              <i data-lucide="file-check" class="lucide mc-tab-icon"></i>
+              <span class="mc-tab-label">Firmados</span>
+              <div class="mc-tab-badge">2</div>
+            </div>
+            <div class="mc-tab-divider"></div>
+            <div class="mc-tab">
+              <i data-lucide="hourglass" class="lucide mc-tab-icon"></i>
+              <span class="mc-tab-label">Pendientes de firmar</span>
+              <div class="mc-tab-badge">1</div>
+            </div>
+          </div>
+          
+          <!-- Table Header -->
+          <div class="mc-th">
+            <span>Contrato</span>
+            <span>Acciones</span>
+          </div>
+
+          <!-- Table Rows -->
+          <!-- Fila 1 -->
+          <div class="mc-row">
+            <div class="mc-contract-info">
+              <span class="mc-contract-title">Autorizaciones ley historial crediticio</span>
+              <span class="mc-contract-sub">Solicitud</span>
+            </div>
+            <div class="mc-actions">
+              <div class="mc-btn-outline">Físico</div>
+              <div class="mc-btn-solid">Completar</div>
+            </div>
+          </div>
+          <!-- Fila 2 -->
+          <div class="mc-row">
+            <div class="mc-contract-info">
+              <span class="mc-contract-title">Solicitud de crédito</span>
+              <span class="mc-contract-sub">Solicitud</span>
+            </div>
+            <div class="mc-actions">
+              <div class="mc-btn-outline">Físico</div>
+              <div class="mc-btn-solid">Completar</div>
+            </div>
+          </div>
+          <!-- Fila 3 -->
+          <div class="mc-row">
+            <div class="mc-contract-info">
+              <span class="mc-contract-title">Designación de notario</span>
+              <span class="mc-contract-sub">Formalización y Desembolso</span>
+            </div>
+            <div class="mc-actions">
+              <div class="mc-btn-outline">Físico</div>
+              <div class="mc-btn-solid">Completar</div>
+            </div>
+          </div>
+          <!-- Fila 4 -->
+          <div class="mc-row">
+            <div class="mc-contract-info">
+              <span class="mc-contract-title">Declaración jurada digital del cliente</span>
+              <span class="mc-contract-sub">Formalización y Desembolso</span>
+            </div>
+          </div>
+          <div class="mc-row">
+            <div class="mc-contract-info">
+              <span class="mc-contract-title">Formulario digital conoce a tu cliente</span>
+              <span class="mc-contract-sub">Formalización y Desembolso</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /login-right -->
+
+  <!-- Scripts -->
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="assets/js/login.js"></script>
+</body>
+</html>
